@@ -19,4 +19,5 @@ kubectl get pods
 export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
 echo Name of the Pod: $POD_NAME
 # Forward the container port to a host
-kubectl port-forward $POD_NAME 8000:80
+kubectl port-forward $POD_NAME 8000:80 &
+kubectl logs -f $POD_NAME

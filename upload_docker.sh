@@ -9,6 +9,7 @@ dockerpath=asalfo/housingapp
 
 # Step 2:
 # Authenticate & tag
+cat ~/my_password.txt | docker login --username asalfo --password-stdin 
 docker tag housingapp $dockerpath
 echo "Docker ID and Image: $dockerpath"
 
